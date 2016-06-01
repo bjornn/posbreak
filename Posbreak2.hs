@@ -1,21 +1,16 @@
 module Posbreak2 where
 import qualified Data.ByteString.Char8 as B
 
-pbdebug :: Integer -> String -> [Integer] -> String -> String
-pbdebug pos result (bhead:breaklist) (n:indata) = show (if pos == bhead then False else True)
-
 pb :: Integer -> String -> [Integer] -> String -> String
 pb pos result breaklist []         = result
 pb pos result []        indata     = result ++ indata
 pb pos result breaklist (n:indata) = 
   let 
-    breakStr = "|"
+    breakStr = "|"  -- Should be able to configure this value without recompiling the code.
   in
     if pos == (head breaklist)
       then pb (pos + 1) (result ++ breakStr ++ [n]) (tail breaklist) indata 
       else pb (pos + 1) (result ++ [n])  breaklist indata 
-
-doPosbreak = (pb 0 "")
 
 posAccumulate _ [] result = result
 posAccumulate startN listN result =

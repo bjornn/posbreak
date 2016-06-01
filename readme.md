@@ -38,7 +38,15 @@ The result will be
 
 This output format can be easily viewed or loaded in a csv-parsing spreadsheet application.
 
+## Building
+This project uses Haskell standard distribution packages and can thus be easily built from the command line with the command
+
+    ghc -o pb2 Main.hs
+    
+A binary for Windows (pb2.exe) is distributed from this site.
+
 ## Caveats
 
 * The program has only been verified to work properly with Swedish characters ÅÄÖåäö for the following character encoding tables: Latin-1, UTF-8.
 * The program has not been tested with large files (Megabytes).
+
