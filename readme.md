@@ -48,5 +48,6 @@ A binary for Windows (pb2.exe) is distributed from this site.
 ## Caveats
 
 * The program has only been verified to work properly with Swedish characters ÅÄÖåäö for the following character encoding tables: Latin-1, UTF-8.
-* The program has not been tested with large files (Megabytes).
+* The program has not been tested with large files (megabytes).
+* The csv separator is hardcoded to be '|' since legacy systems are known to make creative use of ';' when extending their interfaces as separator within columns. The csv separator should in future versions be automatically set by analyzing the header file. 
 
