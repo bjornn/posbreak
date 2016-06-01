@@ -1,9 +1,12 @@
 # POSBREAKS
 
-POSBREAKS is a command line utility that converts a fixed field file into csv columns using a header description file.
+POSBREAKS is a command line utility that converts a fixed field file into a dsv or csv file using a header description file.
 
-The header description file contains one row with a listing of field size and field 
-names. Example header file (aHeader.csv):
+The header description file contains one row with a listing of field size (number of positions) and field 
+names. The header file also defines the delimiter character to be used. Valid delimiter characters are: '|', ';', ':'. 
+If none of these characters are found in the header file, the default delimiter '|' is used.
+
+An example of a header file is included in this distribution (aHeader.csv):
 
     1 PostA|4 PostB|5 Post C|5 PostD|5 PostE|5 PostF|4 PostG
 
@@ -49,5 +52,5 @@ A binary for Windows (pb2.exe) is distributed from this site.
 
 * The program has only been verified to work properly with Swedish characters ÅÄÖåäö for the following character encoding tables: Latin-1, UTF-8.
 * The program has not been tested with large files (megabytes).
-* The csv separator is hardcoded to be '|' since legacy systems are known to make creative use of ';' when extending their interfaces as separator within columns. The csv separator should in future versions be automatically set by analyzing the header file. 
+* The default separator is defined to be '|' since legacy systems are known to make creative use of ';' when extending their interfaces as separator within columns.
 
